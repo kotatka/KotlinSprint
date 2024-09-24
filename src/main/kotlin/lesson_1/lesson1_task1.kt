@@ -1,5 +1,6 @@
 package lesson_1
 
 fun main(){
-    println()
+    println("Привет!!")
+    println("какие-то доработки")
 }
