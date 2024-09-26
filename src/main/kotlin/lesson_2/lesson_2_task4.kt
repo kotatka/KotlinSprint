@@ -1,11 +1,12 @@
 package lesson_2
 
-fun main(){
+fun main() {
+    val percentCons = 100
     val crystalOre = 7
     val ironOre = 11
-    val buff = 0.2f
-    val buffCrystal:Int = (crystalOre*buff).toInt()
-    val buffIron:Int = (ironOre*buff).toInt()
+    val buff = 20f
+    val buffCrystal: Int = (crystalOre * buff / percentCons).toInt()
+    val buffIron: Int = (ironOre * buff / percentCons).toInt()
     println(buffCrystal)
     println(buffIron)
 }
