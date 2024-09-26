@@ -1,15 +1,12 @@
 package lesson_1
 
-fun main(){
+fun main() {
+    val constForTime = 60
     val seconds = 6480
-    var minutes = seconds/60
-    var hour = (minutes/60)
-    var remSeconds = seconds%60
-    var remMinutes = minutes%60
-    print("%02d".format(hour))
-    print(":")
-    print("%02d".format(remMinutes))
-    print(":")
-    print("%02d".format(remSeconds))
+    val minutes = seconds / constForTime
+    val hour = (minutes / constForTime)
+    val remSeconds = seconds % constForTime
+    val remMinutes = minutes % constForTime
+    println("%02d:%02d:%02d".format(hour, remMinutes, remSeconds))
 
 }
