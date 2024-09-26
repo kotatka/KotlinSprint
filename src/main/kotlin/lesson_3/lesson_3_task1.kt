@@ -1,6 +1,6 @@
 package lesson_3
 
-fun main(){
+fun main() {
     var welcomeStr = "Добрый день"
     val userName = "Даниил"
     println("$welcomeStr, $userName!")
