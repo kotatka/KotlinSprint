@@ -7,6 +7,9 @@ fun main () {
     println(textThank)
     var numWorkers: Short = 2000
     println(numWorkers)
+    println(numOfOrders)
+    println(textThank)
+    println(numWorkers)
     numWorkers--
     println(numWorkers)
 
