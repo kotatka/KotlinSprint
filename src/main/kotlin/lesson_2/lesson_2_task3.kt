@@ -1,13 +1,12 @@
 package lesson_2
 
-fun main(){
+fun main() {
+    val constForTime = 60
     val hourDeparture = 9
     val minuteDeparture = 39
     val minutesInTrip = 457
-    val allMinutesArrival = hourDeparture*60 + minuteDeparture + minutesInTrip
-    val hourArrival = allMinutesArrival/60
-    val minuteArrival = allMinutesArrival%60
-    print("%02d".format(hourArrival))
-    print(":")
-    print("%02d".format(minuteArrival))
+    val allMinutesArrival = hourDeparture * constForTime + minuteDeparture + minutesInTrip
+    val hourArrival = allMinutesArrival / constForTime
+    val minuteArrival = allMinutesArrival % constForTime
+    println("%02d:%02d".format(hourArrival, minuteArrival))
 }
