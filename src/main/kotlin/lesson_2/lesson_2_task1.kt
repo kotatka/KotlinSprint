@@ -1,9 +1,10 @@
 package lesson_2
 
-fun main(){
-    val firstStudent:Float = 3f
-    val secondStudent:Float = 4f
-    val thirdStudent:Float = 3f
-    val fourthStudent:Float = 5f
-    println((firstStudent+secondStudent+thirdStudent+fourthStudent)/4)
+fun main() {
+    val sumStudents: Float = 4f
+    val firstStudent: Byte = 3
+    val secondStudent: Byte = 4
+    val thirdStudent: Byte = 3
+    val fourthStudent: Byte = 5
+    println((firstStudent + secondStudent + thirdStudent + fourthStudent) / sumStudents)
 }
