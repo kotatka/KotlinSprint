@@ -1,4 +1,4 @@
-package lesson_2
+package lesson_1
 
 fun main(){
     val numOfOrders: Short = 75
