@@ -6,7 +6,10 @@ fun main() {
     val freeTablesTomorrow = 4
     val bookTablesTomorrow = allTables - freeTablesTomorrow
     var canBook = bookTablesToday < allTables
+
     println("Доступность столиков на сегодня:$canBook")
+
     canBook = bookTablesTomorrow < allTables
+
     println("Доступность столиков на завтра:$canBook")
 }
