@@ -1,7 +1,7 @@
 package lesson_3
 
 fun main() {
-    val numForTable = 5
+    val numForTable = 53
     println(
         """
         $numForTable*1=${numForTable * 1}
