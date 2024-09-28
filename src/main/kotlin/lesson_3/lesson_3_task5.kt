@@ -4,7 +4,9 @@ fun main() {
     val turnChess = "D2-D4;0"
     val (from, too, turn) = turnChess.split("-", ";")
 
-    println("$from-$too;$turn")
+    println(from)
+    println(too)
+    println(turn)
 }
 
 
