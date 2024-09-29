@@ -10,6 +10,8 @@ fun main() {
     val openAwningToday: Boolean = true
     val airHumidityToday: Int = 20
     val seasonToday: String = "winter"
+    val isTrueCondiditon = (SUN_WEATHER == weatherToday) && (OPEN_AWNING == openAwningToday) &&
+            (AIR_HUMIDITY == airHumidityToday) && (BAD_SEASON != seasonToday)
 
-    println("Благоприятные ли условия сейчас для роста бобовых? ${(SUN_WEATHER == weatherToday) && (OPEN_AWNING == openAwningToday) && (AIR_HUMIDITY == airHumidityToday) && (BAD_SEASON != seasonToday)}")
+    println("Благоприятные ли условия сейчас для роста бобовых? $isTrueCondiditon")
 }
