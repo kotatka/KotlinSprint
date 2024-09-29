@@ -1,15 +1,16 @@
 package lesson_4
 
+const val ALL_TABLES = 13
+
 fun main() {
-    val allTables = 13
-    val bookTablesToday = 13
+    val bookTablesToday = ALL_TABLES
     val freeTablesTomorrow = 4
-    val bookTablesTomorrow = allTables - freeTablesTomorrow
-    var canBook = bookTablesToday < allTables
+    val bookTablesTomorrow = ALL_TABLES - freeTablesTomorrow
+    var isBook = bookTablesToday < ALL_TABLES
 
-    println("Доступность столиков на сегодня:$canBook")
+    println("Доступность столиков на сегодня:$isBook")
 
-    canBook = bookTablesTomorrow < allTables
+    isBook = bookTablesTomorrow < ALL_TABLES
 
-    println("Доступность столиков на завтра:$canBook")
+    println("Доступность столиков на завтра:$isBook")
 }
