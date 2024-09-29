@@ -19,7 +19,12 @@ fun main() {
     println("Укажите благоприятность метеусловий.  'true' - если благоприятнаые, 'false' - если неблагопирятные")
     val favorableWeather = readln().toBoolean()
 
-    println("Готовность корабля к плаванию:" +
-            "${((damageShip== DAMAGE_SHIP)&&(numberOfCrew<= MAX_NUMBER_OF_CREW)&&(numberOfCrew>= MIN_NUMBER_OF_CREW)&&(quantityOfProvisions> QUANTITY_OF_PROVISIONS)&&(favorableWeather== FAVORABLE_WEATHER))||
-            ((numberOfCrew== MAX_NUMBER_OF_CREW)&&(favorableWeather== FAVORABLE_WEATHER)&&(quantityOfProvisions> QUANTITY_OF_PROVISIONS))}")
+    println(
+        "Готовность корабля к плаванию:" +
+                "${
+                    ((damageShip == DAMAGE_SHIP) && (numberOfCrew <= MAX_NUMBER_OF_CREW) && (numberOfCrew >= MIN_NUMBER_OF_CREW)
+                            && (quantityOfProvisions > QUANTITY_OF_PROVISIONS) && (favorableWeather == FAVORABLE_WEATHER)) ||
+                            ((numberOfCrew == MAX_NUMBER_OF_CREW) && (favorableWeather == FAVORABLE_WEATHER) && (quantityOfProvisions > QUANTITY_OF_PROVISIONS))
+                }"
+    )
 }
