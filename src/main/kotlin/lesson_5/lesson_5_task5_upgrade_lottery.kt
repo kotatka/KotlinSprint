@@ -1,7 +1,7 @@
 package lesson_5
 
 fun main() {
-    val lotteryNums = ( (0..42).shuffled().take(3) ).toList()
+    val lotteryNums = ((0..42).shuffled().take(3)).toList()
 
     println("Введите 3 числа")
 
