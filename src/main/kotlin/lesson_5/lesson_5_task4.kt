@@ -17,12 +17,10 @@ fun main() {
     println("Введите пароль")
     val userPassword = readln().toString()
 
-    val checkLogin: Boolean = if (userLogin == LOGIN_OF_AUTARIZATION) true
-    else false
-    val checkPassword: Boolean = if (userPassword == PASSWORD_OF_AUTARIZATION) true
-    else false
+    val isLogin: Boolean = (userLogin == LOGIN_OF_AUTARIZATION)
+    val isPassword: Boolean = (userPassword == PASSWORD_OF_AUTARIZATION)
 
-    if ((checkLogin == true) && (checkPassword == true))
+    if ((isLogin == true) && (isPassword == true))
         println(
             """[вздыхает...] Ваши данные проверены, и о, чудо, они верны... Пользователь "Zaphod",
             | вам разрешено входить на борт корабля "Heart of Gold". Хотя мне всё равно... 
