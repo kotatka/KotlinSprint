@@ -2,14 +2,14 @@ package lesson_4
 
 fun main() {
     val trainingDay = 5
-    val dayParity = trainingDay % 2
+    val isEven:Boolean = (trainingDay % 2) == 0
 
     println(
         """
-        Упражнения для рук:    ${dayParity == 0}
-        Упражнения для ног:    ${dayParity != 0}
-        Упражнения для спины:  ${dayParity != 0}
-        Упражнения для пресса: ${dayParity == 0}
+        Упражнения для рук:    ${!isEven}
+        Упражнения для ног:    $isEven
+        Упражнения для спины:  $isEven
+        Упражнения для пресса: ${!isEven}
     """.trimMargin()
     )
 }
