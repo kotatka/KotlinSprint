@@ -1,6 +1,5 @@
 package lesson_2
 
-const val PERCENT_CONST = 100
 
 fun main() {
     val crystalOre = 7
