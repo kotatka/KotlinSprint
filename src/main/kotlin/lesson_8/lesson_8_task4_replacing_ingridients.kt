@@ -6,8 +6,9 @@ fun main() {
 
     println("Какой ингридиент вы хотите заменить?")
     val userOldIngridient = readln()
+    val checkIngridient = ingridientsOfRagu.indexOf(userOldIngridient)
 
-    if (userOldIngridient !in ingridientsOfRagu)
+    if (checkIngridient == -1)
         println("Данного ингридиента нет в рецепте")
     else {
         println("Какой ингридиент вы хотите добавить?")
