@@ -5,7 +5,9 @@ fun main() {
     println("В рецепте есть базовые ингридиенты: $listOfIngridients . Желаете добавить свой?")
     val userChoise = readln()
 
-    if (userChoise != "да") return
+    val rightAnswer = userChoise.equals("да", true)
+
+    if (rightAnswer != true) return
 
     println("Какой ингридиент вы хотите добавить?")
 
