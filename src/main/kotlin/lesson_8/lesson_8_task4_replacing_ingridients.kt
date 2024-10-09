@@ -1,8 +1,11 @@
 package lesson_8
 
+import java.util.*
+
 fun main() {
     val ingridientsOfRagu = arrayOf("курица", "лук", "перец", "соль", "морковь", "картофель")
-    println(ingridientsOfRagu)
+
+    println(Arrays.toString(ingridientsOfRagu))
 
     println("Какой ингридиент вы хотите заменить?")
     val userOldIngridient = readln()
@@ -14,8 +17,7 @@ fun main() {
         println("Какой ингридиент вы хотите добавить?")
         val userNewIngridient = readln()
 
-        val indexReplacing = ingridientsOfRagu.indexOf(userOldIngridient)
-        ingridientsOfRagu[indexReplacing] = userNewIngridient
+        ingridientsOfRagu[checkIngridient] = userNewIngridient
 
         for (i in ingridientsOfRagu) {
             println("Ингридиент ${ingridientsOfRagu.indexOf(i) + 1}: $i")
