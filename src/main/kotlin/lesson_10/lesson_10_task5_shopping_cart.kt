@@ -11,28 +11,38 @@ fun main() {
 
     println("Введите пароль")
     val userPassword = readln()
-    tokenAutorization = autorization(userLogin, userPassword)
+
+    tokenAutorization = autorizate(userLogin, userPassword)
+
+    if (tokenAutorization == "null") {
+        println("Ошибка авторизации")
+        return
+    }
+
     val shopingCart = printCart(tokenAutorization)
-    if (shopingCart == "null") println("Ошибка Авторизации")
-    else println("Ваша корзина: $shopingCart")
+    println(shopingCart)
 }
 
-fun autorization(login: String, password: String): String {
+fun autorizate(login: String, password: String): String {
     var createToken = ""
-    var x = 'c'
-    val intervalForRand = ('0'..'9') + ('a'..'z') + ('A'..'Z')
-    if ((login == USER_LOGIN) && (password == USER_PASSWORD)) {
-        for (i in 1..32) {
-            x = intervalForRand.random()
-            createToken += x
-        }
-    } else createToken = "null"
+
+    if ((login == USER_LOGIN) && (password == USER_PASSWORD)) createToken = generateToken()
+    else createToken = "null"
+
     return createToken
 }
 
-fun printCart(token: String): String {
-    val shopingCart: String
-    if (token != "null") shopingCart = SHOPPING_CART
-    else shopingCart = "null"
-    return shopingCart
+fun printCart(token: String): String = SHOPPING_CART
+
+fun generateToken(): String {
+    var token = ""
+    var x = 'c'
+    val intervalForRand = ('0'..'9') + ('a'..'z') + ('A'..'Z')
+
+    for (i in 1..32) {
+        x = intervalForRand.random()
+        token += x
+    }
+
+    return token
 }
