@@ -9,14 +9,14 @@ fun main() {
 
 fun generatePassword(lenght: Int): String {
     val nums = ('0'..'9')
-    val simbols = arrayOf('!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ' ')
+    val simbols = (' '..'/')
     var password = ""
     var x: Char
 
     for (i in 1..lenght) {
         if (i % 2 == 0) {
 
-            x = simbols[(0..simbols.size - 1).random()]
+            x = simbols.random()
             password += x
 
         } else {
