@@ -2,11 +2,19 @@ package lesson_10
 
 fun main() {
     var winPoint = 0
+    var playerThrow: Int
+    var computerThrow: Int
     var userChoise = "да"
 
     while (userChoise == "да") {
+        playerThrow = throwDice()
+        println("Игрок бросил кубик. У него выпало: $playerThrow")
 
-        winPoint = round(winPoint)
+        computerThrow = throwDice()
+        println("Компьютер бросил кубик. У него выпало: $computerThrow")
+
+        winPoint = comparisonOfResult(playerThrow, computerThrow, winPoint)
+
         println("Вы хотите сыграть еще?")
         userChoise = readln()
 
@@ -17,13 +25,8 @@ fun main() {
 
 fun throwDice() = (1..6).random()
 
-fun round(name: Int): Int {
-    var x = name
-    val playerThrow = throwDice()
-    println("Игрок бросил кубик. У него выпало: $playerThrow")
-
-    val computerThrow = throwDice()
-    println("Компьютер бросил кубик. У него выпало: $computerThrow")
+fun comparisonOfResult(playerThrow: Int, computerThrow: Int, winPoint: Int): Int {
+    var x = winPoint
     if (playerThrow > computerThrow) {
         println("Победило человечество")
         x++
