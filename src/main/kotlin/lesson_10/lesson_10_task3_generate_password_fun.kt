@@ -15,9 +15,7 @@ fun generatePassword(lenght: Int): String {
 
     for (i in 1..lenght) {
         if (i % 2 == 0) {
-
-            x = simbols.random()
-            password += x
+            password += simbols.random()
 
         } else {
 
