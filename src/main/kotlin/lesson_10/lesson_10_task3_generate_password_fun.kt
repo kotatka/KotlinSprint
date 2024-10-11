@@ -19,8 +19,8 @@ fun generatePassword(lenght: Int): String {
 
         } else {
 
-            x = nums.random()
-            password += x
+
+            password += nums.random()
 
         }
     }
