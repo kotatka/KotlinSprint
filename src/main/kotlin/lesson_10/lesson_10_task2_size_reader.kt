@@ -9,14 +9,13 @@ fun main() {
     println("Введите пароль")
     val userPassword = readln()
 
-    val checkPassword = toCheckLenght(toReadLenght(userPassword))
-    val checkLogin = toCheckLenght(toReadLenght(userLogin))
+    val checkPassword = toCheckLenght(userPassword.length)
+    val checkLogin = toCheckLenght(userLogin.length)
 
-    if ((checkLogin == true) || (checkPassword == true))
+    if ((checkLogin) || (checkPassword))
         println("Логин или пароль недостаточно длинные")
 }
 
-fun toReadLenght(name: String): Int = name.count()
 
 fun toCheckLenght(name: Int): Boolean = (name < MIN_LENGHT)
 
