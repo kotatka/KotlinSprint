@@ -1,4 +1,4 @@
-package lesson_11_task1
+package lesson_11
 
 fun main() {
 
@@ -30,3 +30,10 @@ fun main() {
     println(user2.password)
     println(user2.mail)
 }
+
+class User(
+    val id: Int,
+    val login: String,
+    val password: String,
+    val mail: String,
+)
