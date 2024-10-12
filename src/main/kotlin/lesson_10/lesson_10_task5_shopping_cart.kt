@@ -19,7 +19,7 @@ fun main() {
         return
     }
 
-    val shopingCart = printCart(tokenAutorization)
+    val shopingCart = getCart(tokenAutorization)
     println(shopingCart)
 }
 
@@ -32,7 +32,7 @@ fun autorizate(login: String, password: String): String {
     return createToken
 }
 
-fun printCart(token: String): String = SHOPPING_CART
+fun getCart(token: String): String = SHOPPING_CART
 
 fun generateToken(): String {
     var token = ""
