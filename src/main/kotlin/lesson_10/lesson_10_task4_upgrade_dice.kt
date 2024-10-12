@@ -13,7 +13,7 @@ fun main() {
         computerThrow = throwDice()
         println("Компьютер бросил кубик. У него выпало: $computerThrow")
 
-        winPoint = comparisonOfResult(playerThrow, computerThrow, winPoint)
+        winPoint = compareResult(playerThrow, computerThrow, winPoint)
 
         println("Вы хотите сыграть еще?")
         userChoise = readln()
@@ -25,7 +25,7 @@ fun main() {
 
 fun throwDice() = (1..6).random()
 
-fun comparisonOfResult(playerThrow: Int, computerThrow: Int, winPoint: Int): Int {
+fun compareResult(playerThrow: Int, computerThrow: Int, winPoint: Int): Int {
     var x = winPoint
     if (playerThrow > computerThrow) {
         println("Победило человечество")
