@@ -7,10 +7,10 @@ fun main() {
     var userChoise = "да"
 
     while (userChoise == "да") {
-        playerThrow = throwDice()
+        playerThrow = throwDice2()
         println("Игрок бросил кубик. У него выпало: $playerThrow")
 
-        computerThrow = throwDice()
+        computerThrow = throwDice2()
         println("Компьютер бросил кубик. У него выпало: $computerThrow")
 
         winPoint = compareResult(playerThrow, computerThrow, winPoint)
@@ -23,7 +23,7 @@ fun main() {
     println("Ваше количество побед: $winPoint")
 }
 
-fun throwDice() = (1..6).random()
+fun throwDice2() = (1..6).random()
 
 fun compareResult(playerThrow: Int, computerThrow: Int, winPoint: Int): Int {
     var x = winPoint

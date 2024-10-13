@@ -1,10 +1,10 @@
 package lesson_10
 
 fun main() {
-    val playerThrow = throwDice()
+    val playerThrow = throwDice2()
     println("Игрок бросил кубик. У него выпало: $playerThrow")
 
-    val computerThrow = throwDice()
+    val computerThrow = throwDice2()
     println("Компьютер бросил кубик. У него выпало: $computerThrow")
     if (playerThrow > computerThrow) println("Победило человечество")
     else if (computerThrow > playerThrow) println("Победила машина")
@@ -12,4 +12,4 @@ fun main() {
 
 }
 
-fun throwDice() = (1..6).random()
+fun throwDice():Int = (1..6).random()
