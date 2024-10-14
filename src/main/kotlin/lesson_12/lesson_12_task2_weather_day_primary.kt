@@ -1,9 +1,9 @@
 package lesson_12
 
-class WeatherDay2(temperatureDay: Int, temperaturesNight: Int, inPrecipitation: Boolean) {
+class WeatherDay2(temperatureDay: Int, temperaturesNight: Int, isPrecipitation: Boolean) {
     var temperatureDay = temperatureDay
     var temperatureNight = temperaturesNight
-    var isPrecipitation = inPrecipitation
+    var isPrecipitation = isPrecipitation
     fun printWeather() {
         println(
             """Температура днём = $temperatureDay
