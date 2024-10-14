@@ -24,9 +24,7 @@ data class WeatherDay6(
 
 fun main() {
     val monthWeather: MutableList<WeatherDay6> = mutableListOf()
-    val allDayTemperatures: MutableList<Int> = mutableListOf()
-    val allNightTemperatures: MutableList<Int> = mutableListOf()
-    val allInPrecipitation: MutableList<Boolean> = mutableListOf()
+
 
     for (i in 1..30) {
         var newDay = WeatherDay6(
@@ -35,17 +33,15 @@ fun main() {
             isPrecipitation = Random.nextBoolean()
         )
         monthWeather.add(newDay)
-        allDayTemperatures.add(newDay.temperatureDay)
-        allNightTemperatures.add(newDay.temperatureNight)
-        allInPrecipitation.add(newDay.isPrecipitation)
     }
 
-    val averageDayTemperature = allDayTemperatures.average()
-    val averageNightTemperature = allNightTemperatures.average()
-    val allPrecipitation = allInPrecipitation.filter { it == true }
+    val allDayTemperatures: List<Int> = monthWeather.map { it.temperatureDay }.toList()
+    val allNightTemperatures: List<Int> = monthWeather.map { it.temperatureNight }.toList()
+    val allIsPrecipitation: List<Boolean> = monthWeather.map { it.isPrecipitation }.toList()
+    val allTruePrecipitation: List<Boolean> = allIsPrecipitation.filter { it == true }
 
-    println(averageDayTemperature)
-    println(averageNightTemperature)
-    println(allPrecipitation.size)
+    println("Средняя температура днём: ${allDayTemperatures.average()}")
+    println("Средняя температура ночью: ${allNightTemperatures.average()}")
+    println("Количество дней с осадками: ${allTruePrecipitation.size}")
 
 }
