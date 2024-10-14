@@ -2,9 +2,9 @@ package lesson_12
 
 class WeatherDay5(temperatureDay: Int, temperaturesNight: Int, isPrecipitation: Boolean) {
 
-    var temperatureDay = temperatureDay
-    var temperatureNight = temperaturesNight
-    var isPrecipitation = isPrecipitation
+    val temperatureDay = temperatureDay
+    val temperatureNight = temperaturesNight
+    val isPrecipitation = isPrecipitation
 
     fun printWeather() {
         println(
