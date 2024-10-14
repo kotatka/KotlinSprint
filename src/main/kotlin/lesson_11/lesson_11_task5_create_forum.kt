@@ -12,27 +12,32 @@ data class ForumMessage(
 
 data class Forum(
     val forumName: String,
-    var forumMembers: MutableList<ForumMember> = mutableListOf(),
+    var forumMembers: MutableMap<Int, String> = mutableMapOf(),
     var forumMessages: MutableList<ForumMessage> = mutableListOf(),
+    var numsMembers: Int = 0,
 ) {
     fun createNewUser(newNameUser: String): ForumMember {
-        var id = 0
-        var findId: ForumMember?
-        do {
-            id++
-            findId = forumMembers.find { it.userId == id }
-        } while (findId != null)
-
-        forumMembers.add(ForumMember(id, newNameUser))
+        numsMembers++
+        var id = numsMembers
+        forumMembers.put(id, newNameUser)
         return ForumMember(id, newNameUser)
     }
 
     fun createNewMessage(inputUserId: Int, newMessage: String): ForumMessage {
-        val checkUserId = forumMembers.find { it.userId == inputUserId }
-        if (checkUserId != null) forumMessages.add(ForumMessage(inputUserId, newMessage))
+        val checkUserId = forumMembers.containsKey(inputUserId)
+        if (checkUserId != false) forumMessages.add(ForumMessage(inputUserId, newMessage))
         return when (checkUserId) {
-            null -> throw IllegalArgumentException("Такого пользователя нет")
+            false -> throw IllegalArgumentException("Такого пользователя нет")
             else -> ForumMessage(inputUserId, newMessage)
+        }
+    }
+
+    fun printThread() {
+        val allIdMembers = forumMessages.map { it.authorId }.toList()
+        val allMessage = forumMessages.map { it.message }.toList()
+        for (i in 1..allIdMembers.size) {
+            val author = forumMembers.get(key = allIdMembers[i - 1])
+            println("$author: ${allMessage[i - 1]}")
         }
     }
 
@@ -41,19 +46,18 @@ data class Forum(
 
 
 fun main() {
-    val userName1 = "Даня"
     val forum1 = Forum(
         forumName = "Имя форума",
     )
 
+    val userName1 = "Даня"
     forum1.createNewUser(userName1)
-    println(forum1.forumMembers)
 
     val userName2 = "Степа"
-
     forum1.createNewUser(userName2)
-    println(forum1.forumMembers)
 
     forum1.createNewMessage(1, "Привет всем")
-    println(forum1.forumMessages)
+    forum1.createNewMessage(2, "И тебе привет")
+
+    forum1.printThread()
 }
