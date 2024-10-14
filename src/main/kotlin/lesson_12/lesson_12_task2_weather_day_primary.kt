@@ -3,12 +3,12 @@ package lesson_12
 class WeatherDay2(temperatureDay: Int, temperaturesNight: Int, inPrecipitation: Boolean) {
     var temperatureDay = temperatureDay
     var temperatureNight = temperaturesNight
-    var inPrecipitation = inPrecipitation
+    var isPrecipitation = inPrecipitation
     fun printWeather() {
         println(
             """Температура днём = $temperatureDay
             |Температура ночью = $temperatureNight
-            |Наличие осадков в течении суток = $inPrecipitation
+            |Наличие осадков в течении суток = $isPrecipitation
         """.trimMargin()
         )
     }
