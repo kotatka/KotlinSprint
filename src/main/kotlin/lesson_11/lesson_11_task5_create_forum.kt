@@ -18,7 +18,7 @@ data class Forum(
 ) {
     fun createNewUser(newNameUser: String): ForumMember {
         numsMembers++
-        var id = numsMembers
+        val id = numsMembers
         forumMembers.put(id, newNameUser)
         return ForumMember(id, newNameUser)
     }
