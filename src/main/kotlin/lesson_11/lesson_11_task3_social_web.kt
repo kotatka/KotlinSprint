@@ -13,7 +13,7 @@ class Room(
     var members: MutableList<Member> = mutableListOf(),
 ) {
     fun addMember(newMember: Member) {
-        members += mutableListOf(newMember)
+        members.add(newMember)
     }
 
     fun changeStatusMember(nicknameMember: String, newStatus: String) {
