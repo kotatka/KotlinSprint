@@ -16,11 +16,10 @@ data class Forum(
     var forumMessages: MutableList<ForumMessage> = mutableListOf(),
     var numsMembers: Int = 0,
 ) {
-    fun createNewUser(newNameUser: String): ForumMember {
+    fun createNewUser(newNameUser: String) {
         numsMembers++
         val id = numsMembers
         forumMembers.put(id, newNameUser)
-        return ForumMember(id, newNameUser)
     }
 
     fun createNewMessage(inputUserId: Int, newMessage: String): ForumMessage {
