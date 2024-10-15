@@ -35,8 +35,8 @@ fun main() {
     }
 
     val allDayTemperatures: List<Int> = monthWeather.map { it.temperatureDay }
-    val allNightTemperatures: List<Int> = monthWeather.map { it.temperatureNight }.toList()
-    val allIsPrecipitation: List<Boolean> = monthWeather.map { it.isPrecipitation }.toList()
+    val allNightTemperatures: List<Int> = monthWeather.map { it.temperatureNight }
+    val allIsPrecipitation: List<Boolean> = monthWeather.map { it.isPrecipitation }
     val allTruePrecipitation: List<Boolean> = allIsPrecipitation.filter { it == true }
 
     println("Средняя температура днём: ${allDayTemperatures.average()}")
