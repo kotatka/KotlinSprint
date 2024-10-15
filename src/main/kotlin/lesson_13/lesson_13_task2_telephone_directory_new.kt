@@ -4,12 +4,11 @@ data class TelephoneDirectoryNew(
     val nameUser: String,
     val telephoneNumber: Long,
     val nameCompany: String? = null,
-)
-{
-   fun printDirectory() {
-       if (nameCompany==null) println("Имя:$nameUser, Номер:$telephoneNumber, Компания:<Не указано>")
-       else println("Имя:$nameUser, Номер:$telephoneNumber, Компания:$nameCompany")
-   }
+) {
+    fun printDirectory() {
+        val correctName = nameCompany?.toString() ?: ("<Не указано>")
+        println("Имя:$nameUser, Номер:$telephoneNumber, Компания:$correctName")
+    }
 }
 
 fun main() {
