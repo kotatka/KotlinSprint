@@ -6,37 +6,26 @@ data class TelephoneDirectoryList(
     val nameCompany: String? = null,
 ) {
     fun printDirectory() {
-        if (nameCompany == null) println("Имя:$nameUser, Номер:$telephoneNumber, Компания:<Не указано>")
-        else println("Имя:$nameUser, Номер:$telephoneNumber, Компания:$nameCompany")
+        val correctName = nameCompany?.toString() ?: ("<Не указано>")
+        println("Имя:$nameUser, Номер:$telephoneNumber, Компания:$correctName")
     }
 }
 
 fun main() {
-    val telephoneUser1 = TelephoneDirectoryList(
-        nameUser = "Даня",
-        telephoneNumber = 789456123,
-    )
-    val telephoneUser2 = TelephoneDirectoryList(
-        nameUser = "Денис",
-        telephoneNumber = 123456789,
-    )
-    val telephoneUser3 = TelephoneDirectoryList(
-        nameUser = "Оля",
-        telephoneNumber = 88005553535,
-        nameCompany = "\"null\""
-    )
-    val telephoneUser4 = TelephoneDirectoryList(
-        nameUser = "Марина",
-        telephoneNumber = 159753654,
-        nameCompany = "Яндекс",
-    )
-    val telephoneUser5 = TelephoneDirectoryList(
-        nameUser = "Ярослав",
-        telephoneNumber = 77777777,
-        nameCompany = "Сбербанк",
-    )
 
-    val listContacts =
-        listOf<TelephoneDirectoryList>(telephoneUser1, telephoneUser2, telephoneUser3, telephoneUser4, telephoneUser5)
-    println(listContacts)
+
+    val listContacts = mutableListOf(
+        TelephoneDirectoryList("Даня", 789456123),
+        TelephoneDirectoryList("Денис", 123456789),
+        TelephoneDirectoryList("Оля", 88005553535, "null"),
+        TelephoneDirectoryList("Марина", 159753654, "Яндекс"),
+        TelephoneDirectoryList("Ярослав", 77777777, "Сбербанк"),
+    )
+println(listContacts)
+
+    val allCompanies = listContacts.mapNotNull { it.nameCompany }
+    println(allCompanies)
+
+    val numbersCompanies = listContacts.filter { it.nameCompany!=null }
+    println (numbersCompanies)
 }
