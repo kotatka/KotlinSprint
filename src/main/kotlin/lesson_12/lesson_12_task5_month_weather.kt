@@ -25,7 +25,6 @@ data class WeatherDay6(
 fun main() {
     val monthWeather: MutableList<WeatherDay6> = mutableListOf()
 
-
     for (i in 1..30) {
         var newDay = WeatherDay6(
             temperatureDay = (20..30).random(),
@@ -35,7 +34,7 @@ fun main() {
         monthWeather.add(newDay)
     }
 
-    val allDayTemperatures: List<Int> = monthWeather.map { it.temperatureDay }.toList()
+    val allDayTemperatures: List<Int> = monthWeather.map { it.temperatureDay }
     val allNightTemperatures: List<Int> = monthWeather.map { it.temperatureNight }.toList()
     val allIsPrecipitation: List<Boolean> = monthWeather.map { it.isPrecipitation }.toList()
     val allTruePrecipitation: List<Boolean> = allIsPrecipitation.filter { it == true }
