@@ -6,8 +6,8 @@ data class TelephoneDirectoryList(
     val nameCompany: String? = null,
 ) {
     fun printDirectory() {
-        val correctName = nameCompany?.toString() ?: ("<Не указано>")
-        println("Имя:$nameUser, Номер:$telephoneNumber, Компания:$correctName")
+        nameCompany ?: ("<Не указано>")
+        println("Имя:$nameUser, Номер:$telephoneNumber, Компания:$nameCompany")
     }
 }
 
@@ -21,11 +21,9 @@ fun main() {
         TelephoneDirectoryList("Марина", 159753654, "Яндекс"),
         TelephoneDirectoryList("Ярослав", 77777777, "Сбербанк"),
     )
-println(listContacts)
 
-    val allCompanies = listContacts.mapNotNull { it.nameCompany }
-    println(allCompanies)
 
-    val numbersCompanies = listContacts.filter { it.nameCompany!=null }
-    println (numbersCompanies)
+    val numbersCompanies = listContacts.filter { it.nameCompany != null }
+    numbersCompanies.forEach { println(it) }
+
 }
