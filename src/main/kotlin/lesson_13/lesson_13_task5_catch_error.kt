@@ -2,7 +2,7 @@ package lesson_13
 
 data class TelephoneDirectoryList6(
     val nameUser: String,
-    val telephoneNumber: Long,
+    val telephoneNumber: Long?,
     val nameCompany: String? = null,
 )
 
@@ -11,15 +11,15 @@ fun main() {
     val nameUser = readln()
 
     println("Введите номер телефона")
-    val telephoneNumberCheck = readln()
-    val result = telephoneNumberCheck.toDoubleOrNull()
+    var telephoneNumberCheck: String = readln()
+    var telephoneNumber:Long = 0
 
-    if (result == null) {
-        println("Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"$telephoneNumberCheck\"")
-        return
-    }
-
-    val telephoneNumber = telephoneNumberCheck.toLong()
+try {
+     telephoneNumber = telephoneNumberCheck.toLong()
+}catch (e: Exception) {
+    println("Exception in thread \"main\" java.lang.NumberFormatException")
+    return
+}
 
     println("Введите название компании")
     val nameCompany = readln()
