@@ -12,8 +12,6 @@ data class TelephoneDirectoryList(
 }
 
 fun main() {
-
-
     val listContacts = mutableListOf(
         TelephoneDirectoryList("Даня", 789456123),
         TelephoneDirectoryList("Денис", 123456789),
@@ -21,7 +19,6 @@ fun main() {
         TelephoneDirectoryList("Марина", 159753654, "Яндекс"),
         TelephoneDirectoryList("Ярослав", 77777777, "Сбербанк"),
     )
-
 
     val numbersCompanies = listContacts.filter { it.nameCompany != null }
     numbersCompanies.forEach { println(it) }
