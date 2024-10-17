@@ -6,12 +6,20 @@ data class TelephoneDirectoryList5(
     val nameCompany: String? = null,
 )
 
-fun printBook(nameBook: MutableList<TelephoneDirectoryList5>) {
-    println(nameBook)
+data class TelephoneBook(
+    val nameBook: String,
+    val telephoneList: MutableList<TelephoneDirectoryList5> = mutableListOf(),
+)
+{
+    fun printBook() {
+        println(telephoneList)
+    }
 }
 
 fun main() {
-    val telephoneBook: MutableList<TelephoneDirectoryList5> = mutableListOf()
+    val telephoneBook1 = TelephoneBook(
+        nameBook = "Телефонная книга"
+    )
     println("Сколько пользователей вам нужно добавить?")
     val userChoise = readln().toInt()
     for (i in 1..userChoise) {
@@ -27,13 +35,13 @@ fun main() {
 
         println("Введите компанию")
         var nameCompany = readln()
-        if (nameCompany?.length == 0) nameCompany = "null"
+        if (nameCompany.isEmpty()) nameCompany = "null"
         val newUser = TelephoneDirectoryList5(
             nameUser = nameUser,
             telephoneNumber = telephoneNumber,
             nameCompany = nameCompany,
         )
-        telephoneBook.add(newUser)
+        telephoneBook1.telephoneList.add(newUser)
     }
-    printBook(telephoneBook)
+    telephoneBook1.printBook()
 }
