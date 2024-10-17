@@ -3,15 +3,13 @@ package lesson_12
 const val FROM_K_TO_C = 273
 
 class WeatherDay3(temperatureDay: Int, temperatureNight: Int, isPrecipitation: Boolean) {
-    val temperatureDay = temperatureDay
-    val temperatureNight = temperatureNight
+    val temperatureDay = temperatureDay - FROM_K_TO_C
+    val temperatureNight = temperatureNight - FROM_K_TO_C
     val isPrecipitation = isPrecipitation
-    val temperatureDayCel = temperatureDay - FROM_K_TO_C
-    val temperatureNightCel = temperatureNight - FROM_K_TO_C
     fun printWeather() {
         println(
-            """Температура днём = $temperatureDayCel
-            |Температура ночью = $temperatureNightCel
+            """Температура днём = $temperatureDay
+            |Температура ночью = $temperatureNight
             |Наличие осадков в течении суток = $isPrecipitation
         """.trimMargin()
         )
