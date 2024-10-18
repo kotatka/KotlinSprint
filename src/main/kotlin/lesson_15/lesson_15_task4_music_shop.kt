@@ -1,19 +1,24 @@
 package lesson_15
 
+abstract class MusicThing {
+    abstract val name: String
+    abstract val nums: Int
+}
+
 class Instrument(
-    val name: String,
-    val nums: Int,
-) : Search {
-    override fun startSearch() {
+    override val name: String,
+    override val nums: Int,
+) : MusicThing(), Search {
+    override fun startSearch()
+    {
         println("Выполняется поиск комплектующего для инструмента:$name")
     }
-
 }
 
 class Accessory(
-    val name: String,
-    val nums: Int,
-)
+    override val name: String,
+    override val nums: Int,
+) : MusicThing()
 
 interface Search {
     fun startSearch()
