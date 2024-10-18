@@ -11,8 +11,8 @@ fun main() {
     val nameUser = readln()
 
     println("Введите номер телефона")
-    var telephoneNumberCheck: String = readln()
-    var telephoneNumber: Long = 0
+    val telephoneNumberCheck: String = readln()
+    val telephoneNumber: Long
 
     try {
         telephoneNumber = telephoneNumberCheck.toLong()
