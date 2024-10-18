@@ -12,14 +12,14 @@ fun main() {
 
     println("Введите номер телефона")
     var telephoneNumberCheck: String = readln()
-    var telephoneNumber:Long = 0
+    var telephoneNumber: Long = 0
 
-try {
-     telephoneNumber = telephoneNumberCheck.toLong()
-}catch (e: Exception) {
-    println("Exception in thread \"main\" java.lang.NumberFormatException")
-    return
-}
+    try {
+        telephoneNumber = telephoneNumberCheck.toLong()
+    } catch (e: Exception) {
+        println("Exception in thread \"main\" java.lang.NumberFormatException")
+        return
+    }
 
     println("Введите название компании")
     val nameCompany = readln()
@@ -29,5 +29,6 @@ try {
         telephoneNumber = telephoneNumber,
         nameCompany = nameCompany,
     )
+
     println(user1)
 }
