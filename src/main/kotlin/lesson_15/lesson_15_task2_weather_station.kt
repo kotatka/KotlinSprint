@@ -15,9 +15,7 @@ data class WeatherServer(
     val data: MutableList<WeatherStationStats> = mutableListOf<WeatherStationStats>()
 ) {
     fun linkWithServer(par: Any) {
-        val x = par::class.simpleName
-        if (par is Int) println(data.find { it.parametr is Int })
-        else println(data.find { it.parametr is Boolean })
+        println(par)
     }
 }
 
