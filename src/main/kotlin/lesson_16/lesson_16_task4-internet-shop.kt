@@ -4,10 +4,13 @@ class Order(
     val numberOrder: Int,
     private var statusOrder: String = "Заказ создан",
 ) {
-    fun applicationToTheManager(newStatus: String) {
+    private fun changeStatus(newStatus: String) {
         statusOrder = newStatus
     }
 
+    fun applicationToTheManager(newStatus: String) {
+        changeStatus(newStatus)
+    }
 }
 
 fun main() {
