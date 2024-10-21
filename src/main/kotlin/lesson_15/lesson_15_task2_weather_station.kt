@@ -14,7 +14,7 @@ data class PrecipitationAmount(override val numDay: Int, override val parametr: 
 data class WeatherServer(
     val data: MutableList<WeatherStationStats> = mutableListOf<WeatherStationStats>()
 ) {
-    fun linkWithServer(par: Any) {
+    fun linkWithServer(par: WeatherStationStats) {
         println(par)
     }
 }
@@ -26,8 +26,8 @@ fun main() {
 
     weatheServer1.data.add(precipitationAmount1)
 
-    weatheServer1.linkWithServer(temperature1.parametr)
-    weatheServer1.linkWithServer(precipitationAmount1.parametr)
+    weatheServer1.linkWithServer(temperature1)
+    weatheServer1.linkWithServer(precipitationAmount1)
 }
 
 //val x = parametr::class.simpleName
