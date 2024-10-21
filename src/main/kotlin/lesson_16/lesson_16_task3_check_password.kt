@@ -4,7 +4,7 @@ class User(
     val nickName: String = "",
     private val userPassword: String = "",
 ) {
-    fun validation(password: String): Boolean = (password == userPassword)
+    fun validate(password: String): Boolean = (password == userPassword)
 }
 
 fun main() {
@@ -13,6 +13,6 @@ fun main() {
     println("Введите пароль")
     val inputPassword = readln()
 
-    val checkPass = user1.validation(inputPassword)
+    val checkPass = user1.validate(inputPassword)
     println("Верность пароля: $checkPass")
 }
