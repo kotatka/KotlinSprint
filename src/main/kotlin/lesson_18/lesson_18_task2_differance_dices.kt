@@ -1,26 +1,31 @@
 package lesson_18
 
-open class DiceThrow() {
-    open fun throwDice() {
-        println("")
+abstract class DiceThrow() {
+    abstract val faces: Int
+    abstract fun throwDice()
+}
+
+class Dice4facesThrow(
+    override val faces: Int = 4,
+) : DiceThrow() {
+    override fun throwDice() {
+        println("На кости выпало: ${(1..faces).random()}")
     }
 }
 
-class Dice4facesThrow() : DiceThrow() {
+class Dice6facesThrow(
+    override val faces: Int = 6,
+) : DiceThrow() {
     override fun throwDice() {
-        println("На кости выпало: ${(1..4).random()}")
+        println("На кости выпало: ${(1..faces).random()}")
     }
 }
 
-class Dice6facesThrow() : DiceThrow() {
+class Dice8facesThrow(
+    override val faces: Int = 8,
+) : DiceThrow() {
     override fun throwDice() {
-        println("На кости выпало: ${(1..6).random()}")
-    }
-}
-
-class Dice8facesThrow() : DiceThrow() {
-    override fun throwDice() {
-        println("На кости выпало: ${(1..8).random()}")
+        println("На кости выпало: ${(1..faces).random()}")
     }
 }
 
