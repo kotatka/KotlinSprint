@@ -4,12 +4,14 @@ class SpaceShip(
     val name: String,
     val speed: Int,
 ) {
-    fun takeOff(): String = TODO()
+    fun takeOff(): String = TODO("Сделать функцию taheoff")
     fun landing() {
         println("Корабль сел")
     }
-
-    fun shootAsteroid() = TODO()
+    //TODO доделать shootAsteroid
+    fun shootAsteroid(){
+        println("Корабль стреляет, но не точно")
+    }
 }
 
 fun main() {
