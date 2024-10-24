@@ -1,29 +1,24 @@
 package lesson_19
 
-enum class Categories() {
-    CLOATHES {
-        override fun getCategories(): String {
-            return "Cloathes"
-        }
-    },
-    STATIONARY {
-        override fun getCategories(): String {
-            return "Stationary"
-        }
-    },
-    TOYS {
-        override fun getCategories(): String {
-            return "Toys"
-        }
-    },
-    FOOD {
-        override fun getCategories(): String {
-            return "Food"
-        }
-    };
+import lesson_11.Category
 
-    abstract fun getCategories(): String
+enum class Categories() {
+    CLOATHES,
+    STATIONARY,
+    TOYS,
+    FOOD,
 }
+
+fun getCategories(categories: Categories): String {
+    when (categories) {
+        Categories.CLOATHES -> return "Одежда"
+        Categories.STATIONARY -> return "Канцелярские товары"
+        Categories.TOYS -> return "Игрушки"
+        Categories.FOOD -> return "Еда"
+        else -> return "Другая категория"
+    }
+}
+
 
 class Product(
     val name: String,
@@ -31,7 +26,7 @@ class Product(
     val categories: Categories,
 ) {
     fun printProduct() {
-        println("Название товара: $name \nid товара: $id\nКатегория товара: ${categories.getCategories()}\n")
+        println("Название товара: $name \nid товара: $id\nКатегория товара: ${getCategories(categories)}\n")
     }
 }
 
