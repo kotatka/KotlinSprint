@@ -13,7 +13,8 @@ class Tank(val name: String, var typeOfPatron: Patron = Patron.NOTHING) {
     }
 
     fun shoot() {
-        println("$name наносит: ${typeOfPatron.powerPatron} урона")
+        if (typeOfPatron==Patron.NOTHING) println("Танк - $name не заряжен")
+        else println("Танк - $name наносит: ${typeOfPatron.powerPatron} урона")
     }
 }
 
