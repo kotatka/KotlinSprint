@@ -6,19 +6,18 @@ enum class Categories() {
     CLOATHES,
     STATIONARY,
     TOYS,
-    FOOD,
-}
+    FOOD;
 
-fun getCategories(categories: Categories): String {
-    when (categories) {
-        Categories.CLOATHES -> return "Одежда"
-        Categories.STATIONARY -> return "Канцелярские товары"
-        Categories.TOYS -> return "Игрушки"
-        Categories.FOOD -> return "Еда"
-        else -> return "Другая категория"
+    fun getCategories(categories: Categories): String {
+        when (categories) {
+            Categories.CLOATHES -> return "Одежда"
+            Categories.STATIONARY -> return "Канцелярские товары"
+            Categories.TOYS -> return "Игрушки"
+            Categories.FOOD -> return "Еда"
+            else -> return "Другая категория"
+        }
     }
 }
-
 
 class Product(
     val name: String,
@@ -26,7 +25,7 @@ class Product(
     val categories: Categories,
 ) {
     fun printProduct() {
-        println("Название товара: $name \nid товара: $id\nКатегория товара: ${getCategories(categories)}\n")
+        println("Название товара: $name \nid товара: $id\nКатегория товара: ${categories.getCategories(categories)}\n")
     }
 }
 
