@@ -7,8 +7,6 @@ fun main() {
 }
 
 fun Map<String, Int>.maxCategory(): String {
-    val sortedMap = this.toList().sortedByDescending { (_, value) -> value }.toMap()
-    val sortedKeys = sortedMap.keys.toList()
-    val maxCategory = sortedKeys[0]
-    return maxCategory
+    val maxCategory = this.maxByOrNull { (_, value) -> value }
+    return maxCategory!!.key
 }
