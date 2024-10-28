@@ -1,15 +1,13 @@
 package lesson_19
 
-import lesson_11.Category
-
 enum class Categories() {
     CLOATHES,
     STATIONARY,
     TOYS,
     FOOD;
 
-    fun getCategories(categories: Categories): String {
-        when (categories) {
+    fun getCategories(): String {
+        when (this) {
             Categories.CLOATHES -> return "Одежда"
             Categories.STATIONARY -> return "Канцелярские товары"
             Categories.TOYS -> return "Игрушки"
@@ -25,7 +23,7 @@ class Product(
     val categories: Categories,
 ) {
     fun printProduct() {
-        println("Название товара: $name \nid товара: $id\nКатегория товара: ${categories.getCategories(categories)}\n")
+        println("Название товара: $name \nid товара: $id\nКатегория товара: ${categories.getCategories()}\n")
     }
 }
 
