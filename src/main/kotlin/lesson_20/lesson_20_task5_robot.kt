@@ -3,16 +3,17 @@ package lesson_20
 data class Robot(
     val name: String,
     val phrases: MutableList<String> = mutableListOf("Привет", "Как дела", "Пока", "Что делаешь", "Чмок"),
-    val reversePhrases: MutableList<String> = mutableListOf("Привет", "Как дела", "Пока", "Что делаешь", "Чмок"),
+    var setModify: Boolean = false,
 ) {
-    fun say() {
-        println(reversePhrases.random())
+    fun say(lyambda: (String) -> String) {
+        var phrase = phrases.random()
+        if (setModify == false) println(phrase)
+        else println(lyambda(phrase))
     }
 
-    fun setModifier(lyambda: (String) -> String) {
-        for (i in 0..phrases.size - 1) {
-            reversePhrases[i] = lyambda(phrases[i])
-        }
+    fun setModifier() {
+        if (setModify == false) setModify = true
+        else setModify = false
     }
 }
 
@@ -28,9 +29,9 @@ fun main() {
         }
         x
     }
-    robot1.say()
-    robot1.setModifier(reverseWord)
-    robot1.say()
+    robot1.say(reverseWord)
+    robot1.setModifier()
+    robot1.say(reverseWord)
 }
 
 
