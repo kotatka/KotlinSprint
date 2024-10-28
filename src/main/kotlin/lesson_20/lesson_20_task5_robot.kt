@@ -2,15 +2,16 @@ package lesson_20
 
 data class Robot(
     val name: String,
-    val phrases: MutableList<String> = mutableListOf("Привет", "Как дела", "Пока", "Что делаешь", "Чмок")
+    val phrases: MutableList<String> = mutableListOf("Привет", "Как дела", "Пока", "Что делаешь", "Чмок"),
+    val reversePhrases: MutableList<String> = mutableListOf("Привет", "Как дела", "Пока", "Что делаешь", "Чмок"),
 ) {
     fun say() {
-        println(phrases.random())
+        println(reversePhrases.random())
     }
 
     fun setModifier(lyambda: (String) -> String) {
         for (i in 0..phrases.size - 1) {
-            phrases[i] = lyambda(phrases[i])
+            reversePhrases[i] = lyambda(phrases[i])
         }
     }
 }
