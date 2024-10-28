@@ -36,12 +36,11 @@ data class Chat(
     }
 
     fun printChat() {
-        val groupChild = (allMessages.filter { it.parentId != null }).groupBy { it.parentId }
-        val parentGroup = (allMessages.filter { it.parentId == null }).groupBy { it.id }
+        val group = allMessages.groupBy { it.parentId }
         for (i in 0..allMessages.size - 1) {
-            if (i + 1 in parentGroup.keys) println("${allMessages[i]}")
-            if (i + 1 in groupChild.keys) {
-                val x = groupChild[i + 1]
+            if (i + 1 in group.keys) println("${allMessages[i]}")
+            if (i + 1 in group.keys) {
+                val x = group[i + 1]
                 for (i in 0..x?.size!! - 1) {
                     println(x[i])
                 }
